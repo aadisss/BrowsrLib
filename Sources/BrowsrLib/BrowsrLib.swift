@@ -1,7 +1,10 @@
 public typealias Organization = API.Types.Response.Organization
 public struct BrowsrLib {
     public init(completion: @escaping ([API.Types.Response.Organization]) -> Void) {
-          fetchResults(completion: completion)
+        fetchResults { (array) in
+        let sortedArray = array.sorted(by: { $0.login < $1.login })
+        completion(sortedArray)
+        }
       }
    public func fetchResults(completion: @escaping ([API.Types.Response.Organization]) -> Void){
         
