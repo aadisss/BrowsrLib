@@ -8,4 +8,4 @@
 import UIKit
 import Foundation
 
-enum API {}
+public enum API {}

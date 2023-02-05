@@ -8,7 +8,7 @@
 import UIKit
 
 extension API {
-    class Client {
+    public class Client {
         public static let shared = Client()
         public let encoder = JSONEncoder()
         public let decoder = JSONDecoder()

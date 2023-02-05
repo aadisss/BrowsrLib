@@ -12,20 +12,20 @@ extension API {
         public enum Response {
             
             public struct Organization: Decodable {
-                    var id: Int
-                    var login: String
-                    var avatar_url: String
+                public var id: Int
+                public var login: String
+                public  var avatar_url: String
                     }
             
         }
         public enum Request {
-            struct Empty: Encodable {}
+            public struct Empty: Encodable {}
         }
         public enum Error: LocalizedError {
             case generic(reason:String)
             case `internal`(reason:String)
             
-            var errorDescription: String? {
+            public var errorDescription: String? {
                 switch self {
                 case .generic(let reason):
                     return reason
@@ -39,7 +39,7 @@ extension API {
             case search
             case lookup(id: Int)
             
-            var url : URL{
+            public var url : URL{
                 var components = URLComponents()
                 components.host = "api.github.com"
                 components.scheme = "https"

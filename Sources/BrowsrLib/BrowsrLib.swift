@@ -1,10 +1,9 @@
+public typealias Organization = API.Types.Response.Organization
 public struct BrowsrLib {
-    public init() {
-        fetchResults{ (successArray) in
-            print(successArray)
-        }
-    }
-    func fetchResults(completion: @escaping ([API.Types.Response.Organization]) -> Void){
+    public init(completion: @escaping ([API.Types.Response.Organization]) -> Void) {
+          fetchResults(completion: completion)
+      }
+   public func fetchResults(completion: @escaping ([API.Types.Response.Organization]) -> Void){
         
         API.Client.shared
             .get(.search) { (result: Result<[API.Types.Response.Organization], API.Types.Error>) in
